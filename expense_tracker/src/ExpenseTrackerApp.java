@@ -1,3 +1,4 @@
+import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
 /**
@@ -23,17 +24,34 @@ public class ExpenseTrackerApp {
 
     // Handle add transaction button clicks
     view.getAddTransactionBtn().addActionListener(e -> {
-      
-      // Get transaction data from view
-      double amount = view.getAmountField(); 
-      String category = view.getCategoryField();
+      try {
 
-      // Create transaction object
-      Transaction t = new Transaction(amount, category);
+        // Get raw input values from the view
+        String amountInput = view.getAmountInputText();
+        String categoryInput = view.getCategoryInputText();
 
-      // Call controller to add transaction
-      view.addTransaction(t);
+        // Validate the inputs
+        double amount = InputValidation.validateAmount(amountInput);
+        String category = InputValidation.validateCategory(categoryInput);
+
+     
+        // Create transaction object
+        Transaction t = new Transaction(amount, category);
+
+     
+        // Call controller to add transaction
+        view.addTransaction(t);
+    
+      } catch (IllegalArgumentException ex) {
+     
+        // Display error message on the GUI
+     
+        JOptionPane.showMessageDialog(view, ex.getMessage(), "Input Error", JOptionPane.ERROR_MESSAGE);
+ 
+      }
+
     });
+
 
   }
 

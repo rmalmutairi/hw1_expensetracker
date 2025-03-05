@@ -50,6 +50,15 @@ public class ExpenseTrackerView extends JFrame {
     return model;
   }
 
+  public String getAmountInputText() {
+    return amountField.getText();
+}
+
+public String getCategoryInputText() {
+    return categoryField.getText();
+}
+
+
   public ExpenseTrackerView(DefaultTableModel model) {
     setTitle("Expense Tracker"); // Set title
     setSize(600, 400); // Make GUI larger

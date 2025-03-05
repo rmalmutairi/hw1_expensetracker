@@ -1,0 +1,6 @@
+{
+    "java.project.referencedLibraries": [
+        "lib/**/*.jar",
+        "expense_tracker/lib/junit-4.11.jar"
+    ]
+}

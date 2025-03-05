@@ -40,3 +40,11 @@ Here are some examples of violating ```non-functional``` requirements:
 
 ## Understandibility
 For the understandability section, we will be inspecting your git log. You should include either the .git folder or else a gitLog.(pdf | txt).
+
+## Part 3: Understandability - Documentation 
+## Update the README file to briefly describe the supported features. 
+The Expanse Tracker Application allows users to manage daily transactions. With the following orimary features;
+1. Adding transactions - User input the amount and category and the app will validate the inpute before adding it to the list of added and validated transcations. 
+2. Viewing Transactions - Where all the transactions are displayed in a table format along with their details such as date, total, serial. 
+3. Input validation: This app also includes validation to ensure that the amounts that being added are greater than 0 and less than 1000, as well as the category is one of the allowed values (food, travel, bills, entertainment, other)
+4. Extensiblity for Filttering: Although not implemtned yet, the design anticipates future addition like filltering by category, amound range, and date.  
